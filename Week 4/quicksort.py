@@ -14,5 +14,8 @@ def Quicksort(A, l, r):
     # Move Pivot into place
     (A[l], A[yellow-1]) = (A[yellow-1], A[l])
 
-    Quicksort[A, l, yellow-1]
-    Quicksort[A, yellow, r]
+    Quicksort(A, l, yellow-1)
+    Quicksort(A, yellow, r)
+
+LIST = list(range(10, 0, -1))
+Quicksort(LIST, 0, len(LIST))
