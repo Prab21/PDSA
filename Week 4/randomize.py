@@ -1,3 +1,4 @@
+# utility to function to randomize a list before quicksort
 import random
 def randomize(l):
     for i in range(len(l)//2):
