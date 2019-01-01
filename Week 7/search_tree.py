@@ -34,3 +34,18 @@ class Tree:
         self.left = self.right.left
         self.right = self.right.right
         return
+
+    # Check if value v occurs in tree
+    def find(self, v):
+        if self.isempty():
+            return(False)
+
+        if self.value == v:
+            return(True)
+
+        if v < self.value:
+            return(self.left.find(v))
+
+        if v > self.value:
+            return(self.right.find(v))
+
