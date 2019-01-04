@@ -49,3 +49,61 @@ class Tree:
         if v > self.value:
             return(self.right.find(v))
 
+    # Insert value v in tree
+    def insert(self, v):
+        if self.isempty():
+            selv.value = v
+            self.left = Tree()
+            self.right = Tree()
+
+        if self.value == v:
+            return
+
+        if v < self.value:
+            self.left.insert(v)
+            return
+
+        if v > self.value:
+            self.right.insert(v)
+            return
+
+    # Find maximum value in a non-empty tree
+    def maxval(self):
+        if self.right.isempty():
+            return(self.value)
+        else:
+            return(self.right.maxval())
+
+    # Delete value v from tree
+    def delete(self, v):
+        if self.isempty():
+            return
+
+        if v < self.value:
+            self.left.delete(v)
+            return
+
+        if v > self.value:
+            self.right.delete(v)
+            return
+
+        if v == self.value:
+            if self.isleaf():
+                self.makeempty()
+            elif self.left.isempty():
+                copyright()
+            else:
+                self.value = self.left.maxval()
+                self.left.delete(self.left.maxval())
+            return
+
+    # Inorder traversal
+    def inorder(self):
+        if self.isempty():
+            return([])
+        else:
+            return(self.left.inorder()+[self.value]+self.right.inorder())
+
+    # Display Tree as a string
+    def __str__(self):
+        return(str(self.inorder())
