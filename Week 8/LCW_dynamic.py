@@ -13,3 +13,4 @@ def LCW(u,v): # u[0.....,m-1], v[0.....,n-1]
                 LCW[r][c] = 0
             if LCW[r][c] > maxLCW:
                 maxLCW = LCW[r][c]
+    return(maxLCW)
